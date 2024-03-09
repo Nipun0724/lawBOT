@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="https://picsum.photos/id/237/50/50" alt=""></a>
+          <a class="navbar-brand" href="#"><img src="../static/Asset 1.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -39,20 +39,33 @@
       {% block content%}
       {% endblock %}
       <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center border-top footer">
           <div class="col-md-4 d-flex align-items-center">
             <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-              <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+              <img src="../static/Asset 1.png" alt="">
             </a>
             <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
           </div>
       
           <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="#"><img src="../static/facebook.svg" alt=""></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="#"><img src="../static/linkedin.svg" alt=""></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="#"><img src="../static/twitter-x.svg" alt=""></a></li>
           </ul>
         </footer>
       </div>
+      <script>
+        var lastScrollTop=0;
+        var navbar=document.querySelector(".navbar");
+        window.addEventListener("scroll",function(){
+          var scrollTop=window.pageYOffset || document.documentElement.scrollTop;
+          if(scrollTop>lastScrollTop){
+            navbar.style.marginTop='-300px';
+          }else{
+            navbar.style.marginTop='-140px';
+          }
+          lastScrollTop=scrollTop;
+        })
+      </script>
 </body>
 </html>

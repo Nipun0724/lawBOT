@@ -91,6 +91,7 @@ body {
     z-index: 9999999;
 }
 .navbar a img{
+    height: 50px;
     border-radius: 50%;
 }
 .navbar-nav{
@@ -152,26 +153,40 @@ body {
 .services{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../static/pexels-johannes-plenio-1103970.jpg") center/cover no-repeat;
     text-align: center;
-    padding: 30% 10%;
+    padding: 15% 10%;
     transform-style: preserve-3d;
+    color: white;
 }
-
+.services h2{
+    margin-bottom: 20px;
+}
 .tools h2{
     margin-top: 150px;
     margin-bottom: 50px;
     text-align: center;
+}
+.tools img{
+    height: 70px;
+    border-radius: 50%;
 }
 .items{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    color: white;
+}
+.items div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .items img{
     border-radius: 20px;
 }
 h1,h2{
-    color: #BD1877;
+    color: white;
     text-align: center;
 }
 h1{
@@ -257,4 +272,15 @@ h2{
     height: 3rem;
     padding: 0px 20px;
     color: white;
+}
+.footer{
+    margin-top: 150px;
+    padding: 60px;
+    margin-bottom: 10px;
+}
+.footer span{
+    color: white;
+}
+footer img{
+    height: 30px;
 }
