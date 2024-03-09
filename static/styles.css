@@ -117,7 +117,7 @@ body {
 .slider {
     margin-top: 10%;
     position: relative;
-    width: 35rem;
+    width: 45rem;
     height: 25rem;
     transform-style: preserve-3d;
     animation: rotate 60s linear infinite;
