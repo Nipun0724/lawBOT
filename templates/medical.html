@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot</title>
+</head>
+<body>
+  <h1>Chatbot</h1>
+  <form method="POST">
+    <label for="question">Ask a question:</label>
+    <input type="text" name="question" id="question">
+    <input type="submit" value="Ask">
+  </form>
+  {% if question %}
+    <p>You: {{ question }}</p>
+    <p>Chatbot: {{ answer }}</p>
+  {% endif %}
+</body>
+</html>
