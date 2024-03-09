@@ -1,17 +1,18 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(rgba(0, 0, 0,0), rgba(0, 0, 0,0)),url("./7309906_3580293.jpg") center/cover no-repeat;
-    height: 100vh;
-    width: 100%;
-    overflow:hidden;
+    height: 100%;
+    width: 100vw;
+    overflow-x: hidden;
+    color: #5D48B8;
 }
 
 .chat-container {
@@ -25,13 +26,19 @@ body {
     border: 1px solid rgba(255,255,255,0.18);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
 }
+.chat-container .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 25px;
+    color: white;
+    padding: 50px;
+}
 .chat-container form{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
-    color: white;
+    flex-direction: column;
 }
 .chat-box {
     height: 300px;
@@ -39,7 +46,13 @@ body {
     padding: 10px;
     margin-bottom: 10px;
 }
-
+.chat-container input{
+    background: none;
+    outline: none;
+    border: none;
+    color: #fff;
+    border-bottom: 2px solid white;
+}
 #user-input {
     width: 80%;
     padding: 8px;
@@ -64,17 +77,18 @@ body {
     width: 15px;
 }
 ::-webkit-scrollbar-track{
-    background-color: none;
-    border-radius: 10px;
+    background-color: #F8B9D4;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: #fff;
-    border-radius: 10px;
+    background-color: #BD1877;
 }
 .navbar{
     background-color: #BD1877;
-    margin: 20px 50px;
+    margin: -140px 50px;
     box-shadow: 5px 5px 2px 1px rgba(189, 24,119, 0.5);
+    position: fixed;
+    width: 90%;
+    z-index: 9999999;
 }
 .navbar a img{
     border-radius: 50%;
@@ -106,6 +120,7 @@ body {
     height: 25rem;
     transform-style: preserve-3d;
     animation: rotate 60s linear infinite;
+    margin-bottom: 100px;
 }
 @keyframes rotate {
     0%{
@@ -138,6 +153,108 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../static/pexels-johannes-plenio-1103970.jpg") center/cover no-repeat;
     text-align: center;
     padding: 30% 10%;
-    
     transform-style: preserve-3d;
+}
+
+.tools h2{
+    margin-top: 150px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.items img{
+    border-radius: 20px;
+}
+h1,h2{
+    color: #BD1877;
+    text-align: center;
+}
+h1{
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+.dialog-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dialog-container .chat-container{
+    color: #FFCBE6;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    text-align: center;
+    padding-top: 5%;
+}
+.chat-container img{
+    border-radius: 50%;
+}
+h2{
+    margin-top: 90px;
+    margin-bottom: 60px;
+}
+.navbar input{
+    background-color: #5D48B8;
+    border: none;
+    outline: none;
+    padding:5px 25px;
+    color: #F8B9D4;
+}
+.login{
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 2.5rem;
+    padding-bottom: 2rem;
+}
+.login input{
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 20rem;
+    height: 3rem;
+    padding: 0px 20px;
+}
+.login h2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.login .button{
+    width: 7rem;
+    background-color: #007bff;
+    color: #F8B9D4;
+    padding: 3px 5px;
+}
+.login div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.login div a{
+    color: #F8B9D4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+.login div img{
+    height: 15px;
+}
+.form-select{
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 20rem;
+    height: 3rem;
+    padding: 0px 20px;
+    color: white;
 }

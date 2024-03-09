@@ -45,13 +45,10 @@ def home():
     if "account" in session:
         return render_template("home.html")
     else:
-        return redirect(url_for("register"))
+        return redirect(url_for("login"))
 
-@app.route("/register",methods=['POST','GET'])
+@app.route("/user/register",methods=['POST','GET'])
 def register():
-    if "account" in session:
-        return redirect(url_for("home"))
-    else:
         if request.method=="POST":
             username=request.form["username"]
             email=request.form["email"]
@@ -63,7 +60,7 @@ def register():
             account=curr.fetchone()
             if account:
                 flash('Already existing user')
-                return render_template("register.html")
+                return redirect(url_for("login"))
             else:
                 curr.execute('INSERT INTO users (username,email,password) VALUES(%s,%s,%s)',(username,email,hashed))
                 conn.commit()
@@ -74,9 +71,6 @@ def register():
         
 @app.route("/login",methods=['POST','GET'])
 def login():
-    if "account" in session:
-        return redirect(url_for("home"))
-    else:
         if request.method=='POST':
             username=request.form["username"]
             email=request.form["email"]
@@ -118,6 +112,7 @@ def mentorRegister():
             password=request.form["password"]
             qualification=request.form['qualification']
             exp=request.form['exp']
+            type=str(request.form.get('type'))
             hashed=generate_password_hash(password)
             conn=db_conn()
             curr=conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
@@ -125,14 +120,14 @@ def mentorRegister():
             mentor=curr.fetchone()
             if mentor:
                 flash('Already existing user')
-                return render_template("register.html")
+                return redirect(url_for("login"))
             else:
-                curr.execute('INSERT INTO users (username,email,password,qualification,experience,type) VALUES(%s,%s,%s)',(username,email,hashed))
+                curr.execute('INSERT INTO mentors (username,email,password,qualification,experience,type) VALUES(%s,%s,%s,%s,%s,%s)',(username,email,hashed,qualification,exp,type))
                 conn.commit()
                 session["mentor"]=username
                 return redirect(url_for("home"))
         else:
-            return render_template("register.html")
+            return render_template("register.html",mentor=True)
 
 
 

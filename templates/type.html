@@ -7,26 +7,15 @@
     <link rel="stylesheet" href="../static/type.css">
 </head>
 <body>
-    <form action="/type" method="post">
-        <div class="container">
-            <div class="box">
-                <p>Mentor1</p>
-                <input type="radio" name="type" value="mentor1">
-            </div>
-            <div class="box">
-                <p>Mentor2</p>
-                <input type="radio" name="type" value="mentor2">
-            </div>
-            <div class="box">
-                <p>Mentor3</p>
-                <input type="radio" name="type" value="mentor3">
-            </div>
-            <div class="box">
-                <p>Mentor4</p>
-                <input type="radio" name="type" value="mentor4">
-            </div>
+    <div class="type">
+        <div class="option">
+            <img src="https://picsum.photos/id/237/100/100" alt="" class="icon">
+            <a href="/user/register">User<img src="../static/shape_box_direction_Arrow_right_upper_chevron-512.jpg" alt=""></a>
         </div>
-        <input type="submit" value="Submit">
-    </form>
+        <div class="option">
+            <img src="https://picsum.photos/id/237/100/100" alt="" class="icon">
+            <a href="/mentor/register">Mentor<img src="../static/shape_box_direction_Arrow_right_upper_chevron-512.jpg" alt=""></a>
+        </div>
+    </div>
 </body>
 </html>
